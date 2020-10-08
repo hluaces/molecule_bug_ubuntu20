@@ -1,0 +1,16 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: test_ubuntu_focal_sol1
+    image: ubuntu:focal
+    command: '/lib/systemd/systemd'
+    privileged: true
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:rw"
+provisioner:
+  name: ansible
+verifier:
+  name: ansible
